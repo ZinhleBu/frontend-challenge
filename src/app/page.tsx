@@ -1,14 +1,16 @@
 /** @format */
 
 import Image from "next/image";
+import Sidebar from "./components/Sidebar";
+import TopBanner from "./components/TopBanner";
 
 export default function Home() {
   return (
     <main className="m-auto my-10 max-w-7xl space-y-10 px-3">
       <section >
         <div className="grid grid-cols-3 grid-rows-12 gap-4">
-          <div className="row-span-4">Sidebar</div>
-          <div className="col-span-2">Ad Banner 1</div>
+          <div className="row-span-4 sticky"><Sidebar/></div>
+          <div className="col-span-2"><TopBanner/></div>
           <div className="row-span-4 col-start-3 row-start-2">
             Product Information
           </div>

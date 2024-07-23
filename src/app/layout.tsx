@@ -1,12 +1,17 @@
 /** @format */
 
 import type { Metadata } from "next";
-import { Inter, Suez_One } from "next/font/google";
+import { Inter, Suez_One, PT_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
 const inter = Inter({ subsets: ["latin"],  variable: '--font-inter',
 });
+const ptSans = PT_Sans({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pt-sans",
+})
 const suez = Suez_One({
   subsets: ["latin"],
   weight: "400",
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${suez.variable} bg-background min-w-[350px]`}
+        className={`${inter.variable} ${suez.variable} ${ptSans.variable} min-w-[350px]`}
         suppressHydrationWarning
       >
         <Navbar />

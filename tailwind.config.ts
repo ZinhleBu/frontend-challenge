@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-rsuez)'],
+        pt: ['var(--font-pt-sans)'],
       },
     },
   },
