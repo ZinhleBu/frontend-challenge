@@ -1,11 +1,17 @@
 /** @format */
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Suez_One } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"],  variable: '--font-inter',
+});
+const suez = Suez_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-suez",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.variable} ${suez.variable} bg-background min-w-[350px]`}
+        suppressHydrationWarning
+      >
         <Navbar />
         {children}
       </body>

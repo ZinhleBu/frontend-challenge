@@ -16,6 +16,13 @@
   }
 }
 
+html {
+  font-family: var(--font-inter);
+}
+ 
+.nav-link {
+  font-family: var(--font-suez) ;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
