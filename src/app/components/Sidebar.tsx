@@ -7,8 +7,8 @@ import SearchForm from "./SearchForm";
 
 export default function Sidebar() {
   return (
-    <aside className="sticky top-0 h-fit rounded-lg border bg-background border-sky-500 md:w-[260px]">
-      <div className="bg-sky-500 p-4 flex flex-col rounded-t-lg justify-start items-start space-y-4">
+    <aside className="sticky top-0 h-full rounded-lg border bg-background border-sky-500 md:w-[full">
+      <div className="bg-sky-500 p-4 flex flex-col rounded-t-lg justify-start items-start">
         <div className="flex items-start justify-center">
           <ArrowLeft color="white" size={20} />
           <p className="ml-2 text-white text-small">Hide</p>
