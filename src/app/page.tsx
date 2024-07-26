@@ -12,14 +12,15 @@ import image5 from "../app/assets/images/image05.png";
 import { ShoppingCart } from "lucide-react";
 import LargeBanner from "./components/LargeBanner";
 import NewsLetter from "./components/NewsLetter";
+import Products from "./components/ProductCard";
 
 export default function Home() {
-  const [selectedImage, setSelectedImage] = useState("/images/boot1.jpg");
+  const [selectedImage, setSelectedImage] = useState(image1);
   const images = [image1, image2, image3, image4, image5];
   return (
-    <main className="m-auto my-10 max-w-7xl space-y-10 px-3">
+    <main className="m-auto my-10 md:max-w-7xl space-y-10 px-3">
       <section>
-        <div className="flex flex-col md:grid md:grid-cols-4 md:grid-rows-12 gap-4 ">
+        <div className="flex flex-col md:grid md:grid-cols-4 md:grid-rows-9 gap-4 ">
           <div className="row-span-2 sticky">
             <Sidebar />
           </div>
@@ -27,7 +28,7 @@ export default function Home() {
             <TopBanner />
           </div>
           <div className="row-span-2 col-start-4 row-start-2">
-            <div >
+            <div>
               <div className="product-details border-8 border-sky-500 p-5 h-full">
                 <h1 className="text-xl text-large">Dylan Hiker Boot</h1>
                 <p className="text-small text-xs text-gray-400">SUPERBALIST</p>
@@ -72,10 +73,9 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-       
             </div>{" "}
           </div>
-          <div className="row-span-7 col-start-2 col-span-2 row-start-2">
+          <div className="row-span-6 col-start-2 col-span-2 row-start-2">
             <div className="breadcrumb text-small text-md">
               <a className="text-small text-md" href="/">
                 Home
@@ -87,7 +87,7 @@ export default function Home() {
               &gt; Dylan Hiker Boots
             </div>
             <div className="product-container border-6 border-sky-500">
-              <div className="product-images m-auto flex flex-col ">
+              <div className="product-images m-auto  ">
                 <div className="main-image m-auto">
                   <Image
                     src={selectedImage}
@@ -104,7 +104,7 @@ export default function Home() {
                     <div
                       key={index}
                       className="thumbnail"
-                      onClick={() => setSelectedImage(image.src)}
+                      onClick={() => setSelectedImage(image )}
                     >
                       <Image
                         src={image}
@@ -119,46 +119,60 @@ export default function Home() {
             </div>{" "}
           </div>
           <div className="row-span-3 col-start-4 row-start-4">
-                <div className="select-options bg-gray-200 p-4 flex flex-col">
-                  <div className="select-size flex flex-col gap-2">
-                    <label
-                      htmlFor="size"
-                      className="text-small font-medium text-gray-400"
-                    >
-                      Size
-                    </label>
-                    <select
-                      id="size"
-                      className="h-12 text-small font-bold border-2 text-gray-400"
-                    >
-                      <option>Select Size</option>
-                      {/* Add size options here */}
-                    </select>
-                  </div>
-                  <div className="select-quantity flex flex-col gap-2">
-                    <label
-                      htmlFor="quantity"
-                      className="text-small font-medium text-gray-400"
-                    >
-                      Quantity
-                    </label>
-                    <select
-                      id="quantity"
-                      className="h-12 text-small font-bold border-2 text-gray-400"
-                    >
-                      <option>Select Quantity</option>
-                      {/* Add quantity options here */}
-                    </select>
-                  </div>
-                  <button className="bg-sky-500 text-3xl text-large pt-8 pb-8 text-white items-center flex justify-center gap-4">
-                    <ShoppingCart size={40} />
-                    ADD TO CART
-                  </button>
-                </div>
+            <div className="select-options bg-gray-200 p-4 flex flex-col">
+              <div className="select-size flex flex-col gap-2">
+                <label
+                  htmlFor="size"
+                  className="text-small font-medium text-gray-400"
+                >
+                  Size
+                </label>
+                <select
+                  id="size"
+                  className="h-12 text-small font-bold border-2 text-gray-400"
+                >
+                  <option>Select Size</option>
+                  {/* Add size options here */}
+                </select>
+              </div>
+              <div className="select-quantity flex flex-col gap-2">
+                <label
+                  htmlFor="quantity"
+                  className="text-small font-medium text-gray-400"
+                >
+                  Quantity
+                </label>
+                <select
+                  id="quantity"
+                  className="h-12 text-small font-bold border-2 text-gray-400"
+                >
+                  <option>Select Quantity</option>
+                  {/* Add quantity options here */}
+                </select>
+              </div>
+              <button className="bg-sky-500 text-3xl text-large pt-8 pb-8 text-white items-center flex justify-center gap-4">
+                <ShoppingCart size={40} />
+                ADD TO CART
+              </button>
+            </div>
           </div>
-          <div className="row-span-3 col-start-1 row-start-3 sm:w-full sm:m-auto sm:flex sm:items-center sm:justify-center"><LargeBanner/></div>
-          <div className="row-span-2 col-start-1 row-start-6"><NewsLetter/></div>
-          <div className="col-span-2 row-span-3 row-start-9">More Products</div>
+          <div className="row-span-3 col-start-1 row-start-3 sm:w-full sm:m-auto sm:flex sm:items-center sm:justify-center">
+            <LargeBanner />
+          </div>
+          <div className="row-span-2 col-start-1 row-start-6">
+            <NewsLetter />
+          </div>
+          <div className="col-span-3 row-span-3 col-start-2 row-start-6">
+            <div className="flex gap-2 justify-center items-center mb-6 max-sm:mb-7 max-xs:mb-8">
+              <h1 className="text-3xl text-large h-10 flex flex-row md:w-[400px] flex-wrap gap-2">
+                More From <span className="text-sky-500">Boots</span>
+              </h1>
+              <hr className="border-2 border-gray-500 w-full max-sm:hidden" />
+            </div>
+            <div>
+              <Products />
+            </div>
+          </div>
         </div>
       </section>
       <style jsx>{`

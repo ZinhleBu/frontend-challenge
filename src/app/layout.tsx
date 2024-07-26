@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${suez.variable} ${ptSans.variable} min-w-[350px]`}
-        suppressHydrationWarning
+        className={`${inter.variable} ${suez.variable} ${ptSans.variable} `}
+        
       >
         <Navbar />
         {children}

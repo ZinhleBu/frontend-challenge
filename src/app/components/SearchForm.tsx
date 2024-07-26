@@ -128,7 +128,7 @@ export default function SearchForm() {
         <span className="text-gray-500 text-small">R{priceRange[1]}</span>
       </div>
 
-      <button type="submit" className="bg-sky-500 text-white rounded-sm p-2 mt-3 text-large max-w-md">Submit</button>
+      <button type="submit" className="bg-sky-500 text-white rounded-sm p-2 mt-3 text-large w-full">Submit</button>
     </form>
   );
 }
